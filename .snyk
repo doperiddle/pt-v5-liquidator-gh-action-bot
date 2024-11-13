@@ -1,0 +1,16 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@generationsoftware/pt-v5-utils-js > lodash':
+        patched: '2024-11-13T02:01:21.762Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@generationsoftware/pt-v5-utils-js > lodash'
+    - '@generationsoftware/pt-v5-utils-js > ethers-multicall-provider > lodash':
+        patched: '2024-11-13T02:01:21.762Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          @generationsoftware/pt-v5-utils-js > ethers-multicall-provider >
+          lodash
