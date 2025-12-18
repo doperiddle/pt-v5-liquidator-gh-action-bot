@@ -19,7 +19,7 @@
         "@generationsoftware/pt-v5-utils-js": "1.2.0",
         "@types/node": "^22.8.4",
         "chalk": "^5.3.0",
-        "dotenv": "^16.4.7",
+        "dotenv": "^17.2.3",
         "lodash.groupby": "^4.6.0",
         "lodash.pickby": "^4.6.0",
         "node-fetch": "^3.3.2",
