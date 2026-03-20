@@ -95,13 +95,30 @@ Click the name of the run to see the logs. For instance, one of my runs is simpl
 
 #### 5. (Optional) Change Chain, Minimum Profit Threshold (in USD$) or Reward Recipient:
 
-In the [.github/workflows/cron.yml](/.github/workflows/cron.yml) file you can update the following variables: `CHAIN_ID`, `MIN_PROFIT_THRESHOLD_USD`, and/or `SWAP_RECIPIENT`. This will allow you to change which chain you are running the bot against, how much profit you want to make per transaction, and who (which EVM EOA account) receives the profits earned.
+In the workflow files under [.github/workflows/](.github/workflows/) you can update the following variables: `CHAIN_ID`, `MIN_PROFIT_THRESHOLD_USD`, and/or `SWAP_RECIPIENT`. This will allow you to change which chain you are running the bot against, how much profit you want to make per transaction, and who (which EVM EOA account) receives the profits earned.
 
 ###### `CHAIN_ID`: Simply the chain ID. You can find most chain ID's on [https://chainlist.org/](https://chainlist.org/)
 ###### `MIN_PROFIT_THRESHOLD_USD`: This is in $USD, so 0.1 would be $0.10 per transaction
-###### `SWAP_RECIPIENT`: Any typical account address, if left blank this will default to the relayer account set by the `CUSTOM_RELAYER_PRIVATE_KEY` variable.
+###### `SWAP_RECIPIENT`: Any typical account address. Reads from the `ETH_RECEIVING_ADDRESS` repository secret (see below). If not set, defaults to the relayer account set by the `CUSTOM_RELAYER_PRIVATE_KEY` variable.
 
+---
 
+## Donations / Receiving Addresses
+
+If you find this bot useful and would like to donate, or if you want to configure your own receiving address, set the following repository secrets (`Settings` → `Secrets and variables` → `Actions` → `New repository secret`):
+
+| Variable | Description |
+|---|---|
+| `ETH_RECEIVING_ADDRESS` | Ethereum (EVM) address that receives liquidator profits and donations. |
+| `TRON_RECEIVING_ADDRESS` | TRON address for TRON-based donations. |
+
+The default addresses for this fork are:
+- **ETH:** `0xf333907BaF09DC58ad4Ba39Af94009801C825531`
+- **TRON:** `TNKRUjYz1KutzWtYQ384GC9aabyGNiQHUY`
+
+The `ETH_RECEIVING_ADDRESS` secret is automatically wired to the `SWAP_RECIPIENT` environment variable in each workflow, so profits from the liquidator bot are sent to your configured address. See [.envrc.example](.envrc.example) for local development configuration.
+
+---
 
 ## Lastly:
 
