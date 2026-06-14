@@ -23,7 +23,7 @@
         "lodash.groupby": "^4.6.0",
         "lodash.pickby": "^4.6.0",
         "node-fetch": "^3.3.2",
-        "tsx": "^4.20.6",
+        "tsx": "^4.22.4",
         "typescript": "^5.9.3",
         "yn": "^5.1.0"
     }
